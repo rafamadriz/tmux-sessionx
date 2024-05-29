@@ -170,7 +170,10 @@ handle_args() {
 	RENAME_SESSION_RELOAD='bash -c '\'' tmux list-sessions | sed -E "s/:.*$//"; '\'''
 	RENAME_SESSION="$bind_rename_session:execute($RENAME_SESSION_EXEC)+reload($RENAME_SESSION_RELOAD)"
 
-	HEADER="$bind_accept=󰿄  $bind_kill_session=󱂧  $bind_rename_session=󰑕  $bind_configuration_mode=󱃖  $bind_window_mode=   $bind_new_window=󰇘  $bind_back=󰌍  $bind_tree_mode=󰐆   $bind_scroll_up=  $bind_scroll_down= "
+	HEADER="$bind_accept  accept  :: $bind_kill_session delete :: $bind_window_mode windows   :: $bind_configuration_mode configs :: $bind_scroll_up scroll up
+$bind_new_window expand  :: $bind_rename_session     rename :: $bind_tree_mode tree mode :: $bind_back reload  :: $bind_scroll_down scroll down
+
+"
 
 	args=(
 		--bind "$TMUXINATOR_MODE"
